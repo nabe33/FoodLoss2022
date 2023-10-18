@@ -1,0 +1,979 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <script src="./main.js"></script>
+    <script src="./shop.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <script>
+        window.addEventListener('load' , function(){
+            var cartAdd = document.getElementsByClassName("cartAdd");
+            console.log(cartAdd.length);
+
+            for (i = 0; i < cartAdd.length; i++){
+                cartAdd[i].addEventListener("click",function(){
+                var addCartData = ncmb.DataStore("addCartData");
+                var addcartdata = new addCartData();
+                const productindex = $(this).data("index");
+                console.log("productindex" + productindex);
+                console.log(`#price${productindex}`);
+                var quantity = $(`#quantity${productindex}`).val();
+                var product = $(`#product${productindex}`).text();
+                var price = $(`#price${productindex}`).text();
+                var quantityNum = Number(quantity);
+                console.log("quantity" + quantity);
+                console.log("product" + product);
+                console.log("price" + price);
+                console.log("quantityNum" + quantityNum);
+                addcartdata.set("quantity", quantity)
+                            .set("product", product)
+                            .set("price", price*quantityNum)
+                            .set("buy", "n")
+                            .save();
+                });
+            }
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <img src="./image/back.png" alt="戻る" onclick="history.back()" class="backbutton">
+        <img src="./image/icon_home.png" alt="ホーム" onclick="location.href='home.html'" class="headerbutton ">
+    </header>
+    
+    <div class ="head">
+    <h2>ショップ</h2>
+    </div>
+
+    <div class ="menu">
+        <ul>
+            <li><a href="#" class="paneltop" id="paneltop1" data-index="1">カテゴリ</a></li>
+            <li><a href="#" class="paneltop" id="paneltop2" data-index="2" onclick ="seeCart()">買い物かご</a></li>
+            <li><a href="#" class="paneltop" id="paneltop3" data-index="3">マイページ</a></li>
+        </ul>
+    </div>
+
+    <div class ="main">
+
+        <!-- カテゴリ -->
+
+        <div class="panel" id="panel1">
+
+            <h2>野菜・果物</h2>
+            <div class ="content_v">
+                <div class ="contentsimage" data-index="1">
+                    <img class ="product" src ="image/onion.jpeg" alt ="キャベツのイメージ">
+                    <p class ="productName">玉ねぎ</p>
+                </div>
+                <div class ="contentsimage" data-index="2">
+                    <img class ="product" src ="image/potato.jpeg" alt ="キャベツのイメージ">
+                    <p class ="productName">じゃがいも</p>
+                </div>
+                <div class ="contentsimage" data-index="3">
+                    <img class ="product" src ="image/carrot.jpeg" alt ="キャベツのイメージ">
+                    <p class ="productName">にんじん</p>
+                </div>
+                <div class ="contentsimage" data-index="4">
+                    <img class ="product" src ="image/cab.jpeg" alt ="キャベツのイメージ">
+                    <p class ="productName">キャベツ</p>
+                </div>
+                <div class ="contentsimage" data-index="5">
+                    <img class ="product" src ="image/tomato.jpeg" alt ="トマトのイメージ">
+                    <p class ="productName">トマト</p>
+                </div>
+                <div class ="contentsimage" data-index="6">
+                    <img class ="product" src ="image/gp.jpeg" alt ="ピーマンのイメージ">
+                    <p class ="productName">ピーマン</p>
+                </div>
+                <div class ="contentsimage" data-index="7">
+                    <img class ="product" src ="image/moyashi.jpeg" alt ="もやしのイメージ">
+                    <p class ="productName">もやし</p>
+                </div>
+            </div>
+        
+            <h2>肉</h2>
+            <div class ="content_m">
+                <div class ="contentsimage" data-index="8">
+                    <img class ="product" src ="image/meet1.jpeg" alt ="豚肉のイメージ">
+                    <p class ="productName">豚肉</p>
+                </div>
+                <div class ="contentsimage" data-index="9">
+                    <img class ="product" src ="image/meet2.jpeg" alt ="豚肉（細切れ）のイメージ">
+                    <p class ="productName">豚肉（細切れ）</p>
+                </div>
+                <div class ="contentsimage" data-index="10">
+                    <img class ="product" src ="image/meet3.jpeg" alt ="鶏肉のイメージ">
+                    <p class ="productName">鶏肉</p>
+                </div>
+                <div class ="contentsimage" data-index="11">
+                    <img class ="product" src ="image/meet4.jpeg" alt ="ステーキ肉のイメージ">
+                    <p class ="productName">ステーキ肉</p>
+                </div>
+                <div class ="contentsimage" data-index="12">
+                    <img class ="product" src ="image/meet5.jpeg" alt ="ステーキ肉のイメージ">
+                    <p class ="productName">牛肉（角切り）</p>
+                </div>
+            </div>
+
+            <h2>魚</h2>
+            <div class ="content_f">
+                <div class ="contentsimage" data-index="13">
+                    <img class ="product" src ="image/maguro.jpeg" alt ="マグロのイメージ">
+                    <p class ="productName">マグロ</p>
+                </div>
+                <div class ="contentsimage" data-index="14">
+                    <img class ="product" src ="image/samon.jpeg" alt ="サーモンのイメージ">
+                    <p class ="productName">サーモン</p>
+                </div>
+                <div class ="contentsimage" data-index="15">
+                    <img class ="product" src ="image/ika.jpeg" alt ="イカのイメージ">
+                    <p class ="productName">イカ</p>
+                </div>
+                <div class ="contentsimage" data-index="16">
+                    <img class ="product" src ="image/kaki.jpeg" alt ="牡蠣のイメージ">
+                    <p class ="productName">牡蠣</p>
+                </div>
+            </div>
+
+
+            <h2>調味料</h2>
+            <div class ="content_c">
+                <div class ="contentsimage" data-index="17">
+                    <img class ="product" src ="image/oil.jpeg" alt ="かつお節のイメージ">
+                    <p class ="productName">サラダ油</p>
+                </div>
+                <div class ="contentsimage" data-index="18">
+                    <img class ="product" src ="image/katsuobushi.jpeg" alt ="かつお節のイメージ">
+                    <p class ="productName">かつお節</p>
+                </div>
+                <div class ="contentsimage" data-index="19">
+                    <img class ="product" src ="image/suger.jpeg" alt ="砂糖のイメージ">
+                    <p class ="productName">砂糖</p>
+                </div>
+                <div class ="contentsimage" data-index="20">
+                    <img class ="product" src ="image/salt.jpeg" alt ="塩のイメージ">
+                    <p class ="productName">塩</p>
+                </div>
+                <div class ="contentsimage" data-index="21">
+                    <img class ="product" src ="image/miso.jpeg" alt ="みそのイメージ">
+                    <p class ="productName">みそ</p>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <!-- 商品詳細 -->
+
+        <div class ="imageDetail" id ="image1">
+            <div class ="productImage">
+                <img src ="image/onion.jpeg" alt ="玉ねぎのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product1">玉ねぎ 3個入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">238円</span></p>
+                    <p>(税込<span id="price1">257</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity1">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index="1" >カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image2">
+            <div class ="productImage">
+                <img src ="image/potato.jpeg" alt ="じゃがいものイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product2">じゃがいも 4個入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">198円</span></p>
+                    <p>(税込<span id="price2">213</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity2">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index="2" >カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image3">
+            <div class ="productImage">
+                <img src ="image/carrot.jpeg" alt ="にんじんのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product3">にんじん 3本入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">158円</span></p>
+                    <p>(税込<span id="price3">170</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity3">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="3">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image4">
+            <div class ="productImage">
+                <img src ="image/cab.jpeg" alt ="キャベツのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product4">キャベツ 1玉</p>
+                <div class ="detailText">
+                    <p><span class ="price">137円</span></p>
+                    <p>(税込<span id="price4">149</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity4">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="4">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image5"><div class ="productImage">
+                <img src ="image/tomato.jpeg" alt ="トマトのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product5">トマト 3個入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">370円</span></p>
+                    <p>(税込<span id="price5">399</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity5">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="5">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image6"><div class ="productImage">
+                <img src ="image/gp.jpeg" alt ="ピーマンのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product6">ピーマン 5個入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">148円</span></p>
+                    <p>(税込<span id="price6">159</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity6">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="6">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>収穫日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image7">
+            <div class ="productImage">
+                <img src ="image/moyashi.jpeg" alt ="もやしのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product7">もやし 1袋</p>
+                <div class ="detailText">
+                    <p><span class ="price">40円</span></p>
+                    <p>(税込<span id="price7">43</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity7">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="7">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class ="imageDetail" id ="image8">
+            <div class ="productImage">
+                <img src ="image/meet1.jpeg" alt ="豚肉のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product8">豚肉 400g</p>
+                <div class ="detailText">
+                    <p><span class ="price">589円</span></p>
+                    <p>(税込<span id="price8">636</span>円)</p>
+                    <p>100g当たり159円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity8">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="8">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image9">
+            <div class ="productImage">
+                <img src ="image/meet2.jpeg" alt ="豚肉(細切れ)のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product9">豚肉(細切れ) 200g</p>
+                <div class ="detailText">
+                    <p><span class ="price">295円</span></p>
+                    <p>(税込<span id="price9">318</span>円)</p>
+                    <p>100g当たり159円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity9">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="9">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image10">
+            <div class ="productImage">
+                <img src ="image/meet3.jpeg" alt ="鶏肉のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product10">鶏肉 300g</p>
+                <div class ="detailText">
+                    <p><span class ="price">234円</span></p>
+                    <p>(税込<span id="price10">252</span>円)</p>
+                    <p>100g当たり84円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity10">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="10">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image11">
+            <div class ="productImage">
+                <img src ="image/meet4.jpeg" alt ="ステーキ肉のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product11">ステーキ肉 200g</p>
+                <div class ="detailText">
+                    <p><span class ="price">595円</span></p>
+                    <p>(税込<span id="price11">642</span>円)</p>
+                    <p>100g当たり321円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity11">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="11">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image12">
+            <div class ="productImage">
+                <img src ="image/meet5.jpeg" alt ="牛肉(角切り)のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product12">牛肉(角切り) 150g</p>
+                <div class ="detailText">
+                    <p><span class ="price">806円</span></p>
+                    <p>(税込<span id="price12">870</span>円)</p>
+                    <p>100g当たり580円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity12">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="12">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image13">
+            <div class ="productImage">
+                <img src ="image/maguro.jpeg" alt ="マグロのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product13">マグロ 150g</p>
+                <div class ="detailText">
+                    <p><span class ="price">749円</span></p>
+                    <p>(税込<span id="price13">805</span>円)</p>
+                    <p>100g当たり537円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity13">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="13">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image14">
+            <div class ="productImage">
+                <img src ="image/samon.jpeg" alt ="サーモンのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product14">サーモン 150g</p>
+                <div class ="detailText">
+                    <p><span class ="price">596円</span></p>
+                    <p>(税込<span id="price14">643</span>円)</p>
+                    <p>100g当たり429円(税込)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity14">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="14">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image15">
+            <div class ="productImage">
+                <img src ="image/ika.jpeg" alt ="イカのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product15">イカ 60g</p>
+                <div class ="detailText">
+                    <p><span class ="price">298円</span></p>
+                    <p>(税込<span id="price15">321</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity15">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="15">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image16">
+            <div class ="productImage">
+                <img src ="image/kaki.jpeg" alt ="牡蠣のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product16">牡蠣 4個入り</p>
+                <div class ="detailText">
+                    <p><span class ="price">398円</span></p>
+                    <p>(税込<span id="price16">429</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity16">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="16">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>千葉県産</p>
+                        <p>加工日：2022年8月30日</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class ="imageDetail" id ="image17">
+            <div class ="productImage">
+                <img src ="image/oil.jpeg" alt ="サラダ油のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product17">サラダ油 1本(900g)</p>
+                <div class ="detailText">
+                    <p><span class ="price">327円</span></p>
+                    <p>(税込<span id="price17">408</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity17">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="17">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>製造地：千葉県</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image18">
+            <div class ="productImage">
+                <img src ="image/katsuobushi.jpeg" alt ="かつお節のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product18">かつお節 1袋(12パック)</p>
+                <div class ="detailText">
+                    <p><span class ="price">198円</span></p>
+                    <p>(税込<span id="price18">213</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity18">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="18">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>製造地：千葉県</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class ="imageDetail" id ="image19">
+            <div class ="productImage">
+                <img src ="image/suger.jpeg" alt ="砂糖のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product19">砂糖 1袋(1kg)</p>
+                <div class ="detailText">
+                    <p><span class ="price">178円</span></p>
+                    <p>(税込<span id="price19">192</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity19">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="19">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>製造地：千葉県</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image20">
+            <div class ="productImage">
+                <img src ="image/salt.jpeg" alt ="塩のイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product20">塩 1袋(300g)</p>
+                <div class ="detailText">
+                    <p><span class ="price">148円</span></p>
+                    <p>(税込<span id="price20">159</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity20">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="20">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>製造地：千葉県</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class ="imageDetail" id ="image21">
+            <div class ="productImage">
+                <img src ="image/miso.jpeg" alt ="みそのイメージ">
+            </div>
+            <div class ="detail">
+                <p id ="product21">みそ 1パック(500g)</p>
+                <div class ="detailText">
+                    <p><span class ="price">378円</span></p>
+                    <p>(税込<span id="price21">408</span>円)</p>
+                </div>
+                <div class ="cart">
+                    <div class ="cartOpe">
+                        <div class ="cartNumBox">
+                            <select class ="cartNum" id="quantity21">
+                            <option selected value ="1">1</option>
+                            <option value ="2">2</option>
+                            <option value ="3">3</option>
+                            <option value ="4">4</option>
+                            <option value ="5">5</option>
+                            </select>
+                        </div>
+                        <button class ="cartAdd" data-index ="21">カートに追加</button>
+                    </div><br><br>
+                    <div class ="detailOthers">
+                        <h4>詳細情報</h4>
+                        <p>製造地：千葉県</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+       
+
+
+        <!-- 買い物かご -->
+
+        <div class="panel" id="panel2">
+
+            <div class="cartDetail1">
+                <div class ="cartContents">
+                    <div class = "cartProduct">
+                        <h5>商品</h5>
+                        <div id = "cartproduct"></div>
+                    </div>
+                    <div class = "cartQuantity">
+                        <h5>数量</h5>
+                        <div id = "cartquantity"></div>
+                    </div>
+                    <div class="cartPrice">
+                        <h5>価格</h5>
+                        <div id="cartprice"></div>
+                    </div>
+                    <div class = "cartButton">
+                        <h5>　　</h5>
+                        <div id ="cartdelete"></div>
+                    </div>
+                </div>
+                <br>
+                <div class = "cartBuy">
+                    <button class ="buy" onclick="buyOK()">購入する</button>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="cartDetail2">
+            <h4 class"cartDetail2h4">購入するもの</h4>
+            <div class="buyOKcontents">
+            <div id="buyOKproduct"></div>
+            <div id="buyOKquantity"></div>
+            </div>
+            <h4>お届け先</h4>
+            <p>佐藤 明日香　様</p>
+            <p>東京都品川区北品川7-10 シナガワハイツ302号室</p>
+            <h4>お届け予定日</h4>
+            <p>2022年9月2日</p>
+            <br>
+            <div class = "cartBuyOK">
+                <button class ="buyOK" onclick ="buy()">購入を確定</button>
+            </div>
+        </div>
+
+
+        <!-- マイページ-->
+
+        <div class="panel" id="panel3">
+            <div class ="mypage" id ="personal">
+                <p>&emsp;お客様情報&emsp;＞</p>
+            </div>
+            <div class ="mypage" id ="bought" onclick ="seeBought()">
+                <p>&emsp;購入履歴&emsp;＞</p>
+            </div>
+        </div>
+
+        <div class ="Mypage" id ="Personal">
+            <div class="personalHead">
+                <div class="personal1">
+                    <h3 id="personal1">お客様情報</h3>
+                </div>
+                <div class="personal2">
+                    <img src="image/edit.png" height="20px">
+                </div>
+            </div>
+            <div class ="personalDetail">
+                <h5>氏名</h5>
+                <p>佐藤 明日香　様</p><br>
+                <h5>住所</h5>
+                <p>東京都品川区北品川7-10 シナガワハイツ302号室</p><br>
+                <h5>支払い情報</h5>
+                <p>クレジットカード[JCB]</p>
+                <p>カード番号：xxxx-xxxx-xxxx-8365</p>
+            </div>
+        </div>
+        <div class ="Mypage" id ="Bought">
+            <h3>購入履歴</h3>
+            <div class ="Bought">
+                <div class="boughtDay">
+                    <h5>日付</h5>
+                    <div id="boughtday"></div>
+                </div>
+                <div class ="boughtProduct">
+                    <h5>商品</h5>
+                    <div id ="boughtproduct"></div>
+                </div>
+                <div class ="boughtQuantity">
+                    <h5>数量</h5>
+                    <div id ="boughtquantity"></div>
+                </div>
+                <div class ="boughtPrice">
+                    <h5>価格</h5>
+                    <div id ="boughtprice"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

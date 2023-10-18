@@ -1,0 +1,346 @@
+body{
+    background-color: #FAEEE0;
+    color: #7D5A50;
+    font-family: 'Rounded M+ 1c';
+    /* //font-family: "M+ 2c"; */
+    margin: 0;
+}
+header{
+    margin-top:50px; 
+}
+
+.head{
+    text-align: center;
+    font-family: 'Rounded M+ 1c';
+}
+
+
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+.headerbutton{
+    width:50px;
+}
+.backbutton{
+    width: 75px;
+}
+
+.menu{
+    text-align: center;
+    display: block;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid #FA7A5F;
+}
+
+li{
+    display: flex;
+    width: 100%;
+    align-self: auto;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+.main{
+    margin: 3px;
+}
+
+.product{
+    width: 100px;
+}
+
+.content_m{
+    display: flex;
+    text-align: center;
+    width: 350px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.content_f{
+    display: flex;
+    text-align: center;
+    width: 350px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.content_v{
+    display: flex;
+    text-align: center;
+    width: 350px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+.content_c{
+    display: flex;
+    text-align: center;
+    width: 350px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+.imageDetail{
+    display: none;
+}
+.contentsimage{
+    background-color: white;
+    margin: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.contentsimage:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+
+.productName{
+    width: 132px;
+    font-family: "M+ 2c";
+}
+
+.productImage{
+    text-align: center;
+}
+
+.detailText{
+    text-align: right;
+    line-height: 20px;
+}
+
+.price{
+    color: red;
+    font-size: 28px;
+}
+
+.cartOpe{
+    display: flex;
+    float: right;
+}
+.cartNumBox{
+    width: 60px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid gray;
+    position: relative;
+}
+.cartNum{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+.cartNum p{
+    font-size: 20px;
+    margin: 0;
+}
+
+.cartAdd{
+    background-color: #FA7A5F;
+    color: white;
+    text-align: center;
+    width: 7rem;
+    height: 40px;
+    border-radius: 20px;
+    /* border: 1px solid gray; */
+    align-items: center;
+    margin-left: 10px;
+    box-shadow: 0 2px 4px gray;
+}
+.cartAdd:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+select{
+    cursor: pointer;
+}
+
+.detailOthers h4{
+    border-bottom: 1px solid gray;
+}
+
+.cartContents{
+    display: flex;
+}
+
+.cartProduct{
+    width: 55%;
+    background-color: white;
+    margin: 0;
+}
+.cartQuantity{
+    width: 10%;
+    background-color: white;
+    margin: 0;
+}
+.cartPrice{
+    width: 20%;
+    background-color: white;
+    margin: 0;
+}
+.cartButton{
+    width: 15%;
+    background-color: white;
+    margin: 0;
+}
+.deleteButton{
+    font-family: 'Rounded M+ 1c';
+    margin-bottom: 16px;
+
+}
+
+h5{
+    border-bottom: 1px solid #7D5A50;
+}
+.cartBuy{
+    text-align: center;
+}
+.buy{
+    background-color: #FA7A5F;
+    color: white;
+    text-align: center;
+    width: 7rem;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    font-family: 'Rounded M+ 1c';
+    font-weight: bold;
+    align-items: center;
+    margin-left: 10px;
+}
+.buy:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+
+.cartBuyOK{
+    text-align: center;
+}
+
+.buyOK{
+    background-color: #FA7A5F;
+    color: white;
+    text-align: center;
+    width: 7rem;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    font-family: 'Rounded M+ 1c';
+    font-weight: bold;
+    align-items: center;
+    margin-left: 10px;
+}
+.buyOK:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+
+h4{
+    border-bottom: 1px solid #7D5A50 ;
+}
+
+.buyOKcontents{
+    display: flex;
+}
+
+#buyOKproduct{
+    width: 70%;
+}
+#buyOKquantity{
+    width: 30%;
+}
+
+.mypage{
+    height: 5rem;
+    background-color: white;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+#personal:active,#bought:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+
+.mypage p{
+    margin: auto;
+}
+
+.personalHead{
+    display: flex;
+}
+.personal1{
+    width: 30%;
+}
+#personal1{
+    margin: 0;
+}
+.personal2{
+    width: 70%;
+}
+
+.Bought{
+    display: flex;
+}
+
+.boughtDay{
+    width: 22%;
+    background-color: white;
+    margin: 0;
+}
+.boughtProduct{
+    width: 55%;
+    background-color: white;
+    margin: 0;
+}
+.boughtQuantity{
+    width: 10%;
+    background-color: white;
+    margin: 0;
+}
+.boughtPrice{
+    width: 13%;
+    background-color: white;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+

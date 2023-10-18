@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="./css/ref.css">
+    <script src="components/loader.js"></script>
+    <script src="ref.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+        <img src="./image/back.png" alt="戻る" onclick="history.back()" class="backbutton">
+        <img src="./image/icon_home.png" alt="ホーム" onclick="location.href='home.html'" class="headerbutton ">
+    </header>
+    
+    <div class ="head">
+    <h2>冷蔵庫</h2>
+    </div>
+
+    <div class="sort">
+        <p id="sortName">賞味期限順</p>
+        <span class="material-symbols-outlined sortIcon">sort</span>
+        <span class="material-symbols-outlined categoryIcon">category</span>
+    </div>
+    <br>
+    <!-- ここから賞味期限順 -->
+    <div class="limitSortContents">
+        <!-- <h4>今日まで(書き換える)</h4> -->
+        <!-- <div class="limitFoodContents"> -->
+            <!-- <img src="./image/kyabetsu.jpeg" alt="キャベツの画像"> -->
+            <!-- <p class="foodName">キャベツ -->
+                <!-- <span class="minusIcon limitMinusIcon material-symbols-outlined">do_not_disturb_on</span>
+                <span id="numberOfFood">1</span>
+                <span class="plusIcon limitPlusIcon material-symbols-outlined">add_circle</span> -->
+                <!-- <button class="toRecipe">レシピ</button> -->
+            <!-- </p> -->
+        </div>
+    </div>
+
+    <!-- ここからカテゴリ別 -->
+    <br>
+    <div class="categoriesContents">
+        <div class="categories">
+            <p id="cOfVegetable">野菜</p>
+            <p id="cOfMeat">肉</p>
+            <p id="cOfProcessed">加工食品</p>
+            <p id="cOfOthers">その他</p>
+        </div>
+
+        <div class="categoriesFoodDiv">
+            <!-- <img src="./image/kyabetsu.jpeg" alt="キャベツの画像">
+            <p>キャベツ</p> -->
+            <!-- <button class="toRecipe">レシピ</button> -->
+        </div>
+
+        <!-- そしていろいろなカテゴリの色々な食材を書く -->
+    </div>
+
+    <div class="addIcons">
+        <span class="addFood material-symbols-outlined" id="add">add</span><br>
+        <span class="addByPhoto material-symbols-outlined" id="photo">photo_camera</span>
+    </div>
+
+</body>
+</html>

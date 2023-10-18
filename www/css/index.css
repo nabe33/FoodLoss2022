@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    background-color: #F4E0CE;
+    width: 100%;
+    cursor: pointer;
+    color: #7D5A50;
+    overflow: hidden;
+}
+/* header{
+    margin-top: 50px;
+    text-align: center;
+    width: 100%;
+} */
+.main{
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.main img{
+    width: 100%;
+    height: 100%;
+}
+.start{
+    text-align: center;
+    background-color: #FDA153;
+    opacity: 90%;
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    top: 80%;
+}
+.start p{
+    margin: 0;
+    color: #fff;
+    line-height: 45px;
+    font-family: "Avenir";
+    letter-spacing:5px;
+}
+#rankImg{
+    width: 50%;
+    margin: 50px auto;
+    position: relative;
+}
+.rank-text p{
+    font-size: 80px;
+    position: absolute;
+    top: 40px;
+    left: 163px;
+}
+progress{
+    -webkit-appearance: none;
+    position: absolute;
+    top: 250px;
+    left: 110px;
+    height: 20px;
+    border-radius: 20px;
+}
+::-webkit-progress-bar {
+    background-color: #fff;
+  }
+  /* バーの背景色 */
+  ::-webkit-progress-value {
+    background-color: pink;
+  }
+  /* バーの値の色 */
+  /* 決めておいてほしい */

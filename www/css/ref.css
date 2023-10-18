@@ -1,0 +1,348 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    margin: 0;
+    background-color: #FAEEE0;
+    color: #7D5A50;
+    font-family: 'Rounded M+ 1c';
+    /* font-family: "M+ 2c"; */
+}
+header{
+    margin-top:50px; 
+}
+
+.head{
+    text-align: center;
+    font-family: 'Rounded M+ 1c';
+}
+.headerbutton{
+    width:50px;
+}
+.backbutton{
+    width: 75px;
+}
+
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+
+}
+.sort {
+    float:right;
+    display: flex;
+}
+
+#sortName {
+    color:#7D5A50;
+}
+
+.sortIcon {
+    margin-top: 0.5em;
+    margin-left: 10px;
+    text-align: center;
+    width:35px;
+    height:25px;
+    border: solid 1px #7D5A50;
+    /* jsで変えるのはこの2行↓ */
+    color:white;
+    background-color:#7D5A50;
+    cursor: pointer;
+}
+
+.categoryIcon {
+    margin-top: 0.5em;
+    text-align: center;
+    width:35px;
+    height:25px;
+    border: solid 1px #7D5A50;
+    /* jsで変えるのはこの2行↓ */
+    color:#7D5A50;
+    background-color:white;
+    cursor: pointer;
+}
+
+.limitSortContents h4 {
+    font-weight: lighter;
+    padding: 5px 0 5px 5px;
+    background-color:#FA7A5F;
+    color: white;
+}
+
+.limitFoodContents {
+    display: flex;
+    line-height: 50px;
+    padding: 8px;
+    text-align: center;
+    width: 350px;
+    margin: 5px 0 0 5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.limitSortContents img {
+    margin: 0 5px;
+    width: 62px;
+    height: 62px;
+}
+
+.foodName {
+    margin: 10px 0 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.limitSortContents button {
+    margin: 0 0 0 auto;
+    border: none;
+    border-radius: 20px;
+    padding: 0px 20px;
+    background-color: #FA7A5F;
+    color: white;
+    height: 22px;
+    width: 127px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+.limitFoodContents button:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+
+.categories {
+    display: flex;
+    width: 100vw;
+    border-bottom: solid 1px #FA7A5F;
+    margin: 0 0 10px 0;
+}
+
+.categories p {
+    margin: 10px 0 0 0;
+    padding: 10px 26px;
+    text-align: center;
+}
+
+.categoriesFoodDiv {
+    display: flex;
+	flex-wrap:wrap;
+}
+
+.categoriesFoodContents {
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
+    text-align: center;
+    margin: 0 0 10px 5px;
+    width: 180px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.categoriesFoodContents img {
+    width: 100px;
+}
+
+.categoriesFoodContents p {
+    margin: 0;
+}
+
+.categoriesFoodContents button {
+    margin: 5px 0 5px 0;
+    border: none;
+    border-radius: 15px;
+    padding: 5px 50px;
+    background-color: #FA7A5F;
+    color: white;
+}
+
+.addIcons {
+    position:fixed;
+    right:20px;
+    bottom:40px;
+    transition:1s;
+    opacity:0.7;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.addIcons span {
+    margin: 0 3px 0 0;
+    font-size: 30px; 
+    padding: 20px;
+    border-radius: 100%;
+    color: white;
+    background-color: #FA7A5F;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.addIcons span:active{
+    box-shadow: none;
+    position: relative;
+    top: 5px;
+}
+
+/* ここからrefAdd.html */
+
+.backIcon {
+    padding: 10px 0 0 10px;
+}
+
+.addPage h3 {
+    font-weight: lighter;
+    padding: 5px 0 5px 5px;
+    background-color: #FA7A5F;
+    color: white;
+}
+
+.buyDate {
+    display: flex;
+}
+
+/* 
+#buyDate {
+    font-size: 20px;
+    color: brown;
+    border: none;
+    background-color: #FAEEE0;
+} */
+
+/* .changeBuyDate {
+    font-size: 20px;
+    margin: auto 0;
+} */
+
+.buyDate select {
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.addCategories {
+    margin-left: 20px;
+    display: flex;
+}
+
+.addCategories h4{
+    border-radius: 5px;
+    font-weight: lighter;
+    background-color: white;
+    margin: 10px 5px 0 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+#candidates {
+    margin-left: 10px;
+}
+
+#candidates p {
+    font-weight: bolder;
+}
+
+#manualInput {
+    margin-left: 10px;
+    display: flex;
+    height: 30px;
+}
+
+#manualInput input{
+    background-color: white;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+}
+
+#manualInput button{
+    margin-left: 10px;
+    width: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.limitDate {
+    margin-left: 10px;
+    display: flex;
+}
+
+#caution {
+    font-size: 8px;
+}
+
+#setLimitDate {
+    margin-left: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FAEEE0;
+}
+
+
+#addDecision {
+    text-align: center; 
+    padding: 10px 10px;
+    color: white;
+    background-color: #FA7A5F;
+    border-radius: 20px;
+}
+
+/* ここからrefPhoto.html */
+.refPhoto {
+    display: flex;
+    width: 100vw;
+}
+
+.refPhoto h3 {
+    width: 150px;
+    padding: 20px 20px;
+    text-align:center;
+    font-weight: lighter;
+}
+
+#receiptPhoto {
+    background-color: #FA7A5F;
+    color: white;
+}
+
+#refPhoto {
+    background-color: white;
+    color: #7D5A50;
+}
+
+.camera {
+    width: 100vw;
+}
+
+#camera {
+    padding: 1em;
+    border-radius: 100%;
+    background-color: #FA7A5F;
+    color: white;
+}
+
+
+/*.limitFoodContents{
+    width: 375px;
+    height: 80px;
+    border-radius: 10px;
+    background-color: white;
+}
+.limitFoodContents img{
+    width: 62px;
+}
+.foodName{
+    font-size: 20px;
+    font-weight: bold;
+}
+.toRecipe{
+    background-color: #FA7A5F;
+    color: white;
+    height: 127px;
+    width: 22px;
+    font-size: 13px;
+    font-weight: bold;
+}*/

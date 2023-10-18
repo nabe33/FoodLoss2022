@@ -1,0 +1,139 @@
+html{
+    overflow: hidden;
+}
+body{
+    font-family: 'Rounded M+ 1c';
+    background-image:url("../image/bg.png") ;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+header{
+    height: 140px;
+}
+.head-bg{
+    height: 65px;
+    background: linear-gradient(rgba(73,86,100,0.81),rgba(73,86,100,0));
+}
+.head-left{
+    float: left;
+    padding-top: 8px;
+    width: 25%;
+}
+.head-left img{
+    padding-left: 2px;
+    width: 100%;
+    position: relative;
+    padding-top:5px;
+}
+.rank-text p{
+    font-family: "M+ 2c";
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    top: 45px;
+    margin: 0 auto;
+    text-align: center;
+    width: 25%;
+}
+progress{
+    -webkit-appearance: none;
+    width: 25%;
+    position: absolute;
+    height: 10px;
+    top: 110px;
+    margin-left: 2px;
+}
+::-webkit-progress-bar {
+    background-color: #fff;
+  }
+  /* バーの背景色 */
+  ::-webkit-progress-value {
+    background-color: pink;
+  }
+  /* バーの値の色 */
+  /* 決めておいてほしい */
+
+.head-right{
+    text-align: right;
+    float: right;
+    padding-top: 40px;
+    display: flex;
+}
+.daytime p{
+    margin: 0;
+}
+#date{
+    color: #fff;
+    font-size: 14px;
+}
+#time{
+    color: #fff;
+    font-size: 25px;
+}
+#menubtn{
+    width: 44px;
+    height: 44px;
+}
+#mailIcon{
+    margin-left: 15px;
+    display: block;
+    cursor: pointer;
+}
+#presentIcon{
+    margin-left: 15px;
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+}
+.main-man{
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    z-index: -1;
+}
+#manHome{
+    width: 100%;
+    margin: 0 10%;
+    position: relative;
+}
+#sayingImg{
+    position: absolute;
+    width: 277px;
+    top: 300px;
+    margin: 0 13%;
+}
+#manName{
+    margin-top: 0;
+    margin-left: 33%;
+    position: absolute;
+    top: 302px;
+    color: #fff;
+}
+#sayingText{
+    position: absolute;
+    top: 342px;
+    margin: 0 22%;
+    white-space: nowrap;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+}
+.foot-container{
+    width: calc(100% / 3);
+    text-align: center;
+}
+footer img{
+    cursor: pointer;
+    width: 88px;
+    margin: 0 auto;
+}
+.fotterrecepe{
+    width:110px;
+}

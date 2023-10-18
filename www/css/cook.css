@@ -1,0 +1,224 @@
+body{
+    margin: 0;
+    background-color: #F4E0CE;
+    color: #7D5A50;
+    font-size: 16px;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+header{
+    margin-top:50px;
+}
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.headerbutton{
+    width:50px;
+}
+.backbutton{
+    width: 75px;
+}
+
+.content{
+margin-top:0;
+}
+
+.recipe{
+    background-color: white;
+    border-radius: 10px;
+    width: 340px;
+    /* height: 685px; */
+    margin: 5px auto 20px auto;
+    padding-bottom: 10px;
+}
+.explanation h2{
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
+}
+.explanation img{
+    width: 299px;
+    height: 179px;
+}
+.cookimg{
+    text-align: center;
+}
+
+.tag{
+    display: flex;
+}
+.tag p{
+    font-size: 14px;
+}
+.categoritag{
+    background-color: #FDA153;
+    border-radius: 10px;
+    padding:0 3%;
+    margin-left:10px;
+    color: #fff;
+}
+.minute{
+    margin: 0 auto 0 5px;
+}
+.time-container{
+    color:gray;
+    display: flex;
+    margin: 14px 10px 14px auto;
+}
+
+.zairyou{
+    border-radius: 10px;
+    border:solid #FDA153 2px;
+    width: 299px;
+    /* height: 143px; */
+    margin: 5px auto;
+}
+.make{
+    border-radius: 10px;
+    border:solid #FDA153 2px;
+    width: 299px;
+    /* height: 143px; */
+    margin: 5px auto;
+}
+.title{
+    display: inline-block;
+    width: 100px;
+    background-color: #FA7A5F;
+    border-radius: 10px;
+    padding:0;
+    color:white;
+    text-align: center;
+    margin: 5px;
+}
+.zairyou table{
+    width: 199px;
+    margin: 5px auto 10px auto;
+}
+.zairyou th{
+    font-weight: normal;
+    text-align: left;
+}
+.zairyou td{
+    text-align: right;
+    margin: 0 0 0 auto;
+}
+.num{
+    background-color:#FA7A5F ;
+    display: inline-block;
+    width: 1.5em;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+}
+.make h4{
+    margin: 5px;
+}
+#shousai{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.flex{
+    display: flex;
+}
+#make-prev,#make-next{
+    width: 10%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 2em;
+    cursor: pointer;
+}
+#make-prev{
+    color: #fff;
+}
+
+
+.area-yesbutton{
+    text-align: center;
+}
+
+.yes{
+    display: inline-block;
+    cursor: pointer;
+    background-color:#E34E4B;
+    color:white;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    padding:5px;
+    margin:10px auto;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.yes:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.nowcooked{
+    width: 100%;
+    height:50px;
+    background-color:#7D5A50;
+    color:white;
+    text-align: center;
+    padding:5px;
+    /* margin:10px 0; */
+    font-size: 20px;
+    /* position: fixed;
+    top: 50px; */
+}
+#manup{
+    width: 100%;
+    margin: 20% 0 0 0;
+    position: relative;
+    z-index: -1;
+}
+#sayingImg{
+    position: absolute;
+    width: 277px;
+    top: 450px;
+    left: 50px;
+    /* margin: 0 13%; */
+}
+#manName{
+    margin-top: 0;
+    position: absolute;
+    top: 452px;
+    left: 110px;
+    color: #fff;
+}
+#sayingText{
+    position: absolute;
+    top: 492px;
+    margin: 0 22%;
+    white-space: nowrap;
+}
+#loveUp{
+    position: absolute;
+    top: 300px;
+    left: 0;
+    width: 100%;
+}
+.loveUp{
+       position: absolute;
+    top: 310px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+progress{
+    -webkit-appearance: none;
+    height: 20px;
+    border-radius: 20px;
+}
+::-webkit-progress-bar {
+    background-color: #fff;
+  }
+  /* バーの背景色 */
+  ::-webkit-progress-value {
+    background-color: pink;
+  }

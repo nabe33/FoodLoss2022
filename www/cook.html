@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/cook.css">
+    <script src="components/loader.js"></script>
+    <script src="cook.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="https://kit.fontawesome.com/b094cf5cd7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./image/back.png" alt="戻る" onclick="history.back()" class="backbutton">
+        <img src="./image/icon_home.png" alt="ホーム" onclick="location.href='home.html'" class="headerbutton ">
+    </header>
+    <div class="content">
+        
+        <div class="nowcooked" id="nowcooked">
+            <p>調理中・・・</p>
+        </div>
+
+        <div class="recipe">
+
+            <div class="explanation">
+
+                <h2>料理名</h2>
+                <div class="cookimg">
+                    <img src="./image/curry_photo.jpg" alt="料理写真">
+                </div>
+                
+                <div class="tag">
+                    <p class="categoritag">#初心者向け</p>
+                    <p class="categoritag">#30分以内</p>
+                    <div class="time-container">
+                        <span class="fa-regular fa-clock"></span>
+                        <p class="minute">30分</p>
+                    </div>
+                </div>
+                
+                <div class="zairyou">
+                    <p class="title">材料(1人前)</p>
+                    <table></table>
+                </div>
+
+                <div class="make">
+                    <p class="title">作り方</p>
+                    <h4><span class="num">1</span><span id="h4"> 具材をきる</span></h4>
+                    <div class="flex">
+                        <span class="fa-solid fa-angle-left" id="make-prev"></span>
+                        <p id="shousai">玉ねぎ：くし切り<br>じゃがいも：縦半分にしたものをさらに2等分<br>にんじん：3cmくらいの乱切り</p>
+                        <span class="fa-solid fa-angle-right" id="make-next"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="area-yesbutton">
+                <p class="yes" id="letscook">料理を作る</p>
+                <p class='yes' id='completed'>完成</p>
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+</html>

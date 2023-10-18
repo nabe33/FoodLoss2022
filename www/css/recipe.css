@@ -1,0 +1,145 @@
+body{
+    margin: 0;
+    background-color: #FAEEE0;
+    color: #7D5A50;
+    font-family: 'Rounded M+ 1c';
+    /* font-family: "M+ 2c"; */
+}
+
+/* //ヘッダー */
+
+.headerTop{
+    height: 50px;
+}
+
+header{
+    margin-top:50px; 
+}
+
+.head{
+    text-align: center;
+    font-family: 'Rounded M+ 1c';
+}
+
+
+button{
+    border: none;
+    outline: none;
+    background: transparent;
+
+}
+.headerbutton{
+    width:50px;
+}
+.backbutton{
+    width: 75px;
+}
+
+
+
+
+/* //ここまで */
+.menu{
+    text-align: center;
+    display: block;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid #FA7A5F;
+}
+
+li{
+    display: flex;
+    width: 100%;
+    align-self: auto;
+}
+
+a{
+    text-decoration: none;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+}
+
+h1{
+    font-weight: normal;
+    text-align: center;
+    border-bottom: 1px #7D5A50 solid;
+}
+
+input{
+    border:2px #7D5A50 solid;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    width: 341px;
+    height: 42px;
+    font-family: 'Rounded M+ 1c';
+    font-size: 20px;
+    margin: 0 auto;
+
+}
+.input-container{
+    text-align: center;
+}
+
+.food{
+    margin: 20px;
+}
+.main{
+    width: 344px;
+}
+.foods-container{
+    width: 344px;
+}
+.recipe-container{
+    display: flex;
+    text-align: center;
+    width: 350px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+
+.recipe{
+    width: 175px;
+    /* height: 160px; */
+    margin: 5px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+.recipe:active{
+    box-shadow: none;
+    position: relative;
+    top: 2px;
+}
+.recipe img{
+    margin: 10px 5px 0 5px;
+    width: 165px;
+    cursor: pointer;
+}
+.recipe-name{
+    margin: 0 5px 5px 5px;
+    font-size: 16px;
+    font-family: "M+ 2c";
+    text-align: left;
+    
+}
+/*.cookbtn{
+    display: inline-block;
+    width: 84px;
+    background-color: #FA7A5F;
+    color: #fff;
+    border-radius: 20px;
+    margin: auto auto 10px auto;
+    cursor: pointer;
+}*/

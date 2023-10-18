@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="./css/ref.css">
+    <script src="ref.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+        <img src="./image/back.png" alt="戻る" onclick="history.back()" class="backbutton">
+        <img src="./image/icon_home.png" alt="ホーム" onclick="location.href='home.html'" class="headerbutton ">
+    <header>
+    <div class="addPage">
+        <h2>冷蔵庫の中身を追加</h2>
+        
+        <h3>購入日</h3>
+            <div class="buyDate">
+               <select id="buyYear">
+                    <option selected>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                </select>
+                <span> 年 </span>
+                <select id="buyMonth">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option selected>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <span> 月 </span>
+                <select id="buyDate2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option selected>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option selected>31</option>
+                </select>
+                <span> 日 </span>
+            </div>
+
+        <h3>カテゴリ</h3>
+            <div class="addCategories">
+                <h4 id="addOfVegetable">野菜</h4>
+                <h4 id="addOfMeat">肉</h4>
+                <h4 id="addOfProcessed">加工食品</h4>
+                <!-- <h4 id="addOfOthers">その他</h4> -->
+            </div>
+
+        <h3>候補</h3>
+            <p id="candidates">カテゴリを選んでください。</p>
+
+        <h3>その他</h3>
+            <div id="manualInput">
+                <!-- OK押したらテキストフォームを入力した文字に、ボタンを変更ボタンに書き換える -->
+                <input type="text">
+                <button>OK</button>
+            </div>
+
+
+        <h3>賞味期限（＊任意）</h3>
+            <div class="limitDate">
+                <p id="limitDate">日付は指定されていません<br><span id="caution">＊指定しない場合は自動設定となります。</span></p>
+                <button id="setLimitDate">設定 ＞</button>
+            </div>
+
+        <div id="addDecision">
+            <button>決定</button>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
